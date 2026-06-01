@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vectorbleed"
+version = "0.1.0"
+description = "VectorBleed: Cross-Tenant Data Leakage Research Framework for Multi-Tenant Vector Databases"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "MIT" }
+authors = [
+    { name = "AetherGuard Research" }
+]
+
+dependencies = [
+    "openai>=1.30.0",
+    "pinecone>=5.0.0",
+    "langchain>=0.2.0",
+    "langchain-openai>=0.1.0",
+    "langchain-pinecone>=0.1.0",
+    "langchain-weaviate>=0.0.3",
+    "langchain-qdrant>=0.1.0",
+    "langchain-chroma>=0.1.0",
+    "weaviate-client>=4.6.0",
+    "qdrant-client>=1.9.0",
+    "chromadb>=0.5.0",
+    "llama-index-core>=0.11.0",
+    "llama-index-vector-stores-pinecone>=0.2.0",
+    "llama-index-vector-stores-qdrant>=0.3.0",
+    "llama-index-vector-stores-chroma>=0.2.0",
+    "llama-index-vector-stores-weaviate>=2.0.0",
+    "llama-index-embeddings-openai>=0.2.0",
+    "numpy>=1.26.0",
+    "scipy>=1.12.0",
+    "scikit-learn>=1.4.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "pandas>=2.2.0",
+    "rouge-score>=0.1.2",
+    "rich>=13.7.0",
+    "click>=8.1.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.29.0",
+    "nbformat>=5.10.0",
+]
+ml = [
+    "torch>=2.2.0",
+    "transformers>=4.40.0",
+]
+
+[project.scripts]
+vectorbleed = "vectorbleed.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vectorbleed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
