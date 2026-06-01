@@ -1,3 +1,4 @@
+<img width="120" height="120" alt="ag_security_logo - github" src="https://github.com/user-attachments/assets/0d5b299d-c9e9-4024-9356-25216f9740ca" /><br/>
 # AetherGuard Research
 
 **Offensive security research for AI infrastructure.**
